@@ -6,6 +6,12 @@
       :date="headerItem.date"
     />
     <whats-new class="mb-4" :items="newsItems" />
+    <!-- <static-info
+      class="mb-4"
+      :url="'/flow'"
+      :text="'自分や家族の症状に不安や心配がある方はこちらをごらんください'"
+      :btn-text="'相談の手順を見る'"
+    /> -->
     <v-row class="DataBlock">
       <!--
       <v-col cols="12" md="6" class="DataCard">
@@ -103,11 +109,11 @@ import TimeBarChart from '@/components/TimeBarChart.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 // import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
-import MetroData from '@/data/metro.json'
+// import MetroData from '@/data/metro.json'
 import DataTable from '@/components/DataTable.vue'
 import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
-import formatConfirmedCases from '@/utils/formatConfirmedCases'
+// import formatConfirmedCases from '@/utils/formatConfirmedCases'
 import News from '@/data/news.json'
 // import SvgCard from '@/components/SvgCard.vue'
 // import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'
@@ -119,7 +125,7 @@ export default {
     //    MetroBarChart,
     //    TimeStackedBarChart,
     WhatsNew,
-    //    StaticInfo,
+    // StaticInfo,
     DataTable
     //    SvgCard,
     //    ConfirmedCasesTable
@@ -143,10 +149,10 @@ export default {
     //   Data.inspections_summary.data['県内'],
     //   Data.inspections_summary.data['その他']
     // ]
-    const inspectionsItems = [
-      '県内発生（疑い例・接触者調査）',
-      'その他（チャーター便・クルーズ便）'
-    ]
+    // const inspectionsItems = [
+    //   '県内発生（疑い例・接触者調査）',
+    //   'その他（チャーター便・クルーズ便）'
+    // ]
     // const inspectionsLabels = Data.inspections_summary.labels
     // 死亡者数
     // #MEMO: 今後使う可能性あるので一時コメントアウト
@@ -182,60 +188,60 @@ export default {
         title: '愛知県内の最新感染動向',
         date: Data.lastUpdate
       },
-      newsItems: News.newsItems,
-      metroGraphOption: {
-        responsive: true,
-        legend: {
-          display: true
-        },
-        scales: {
-          xAxes: [
-            {
-              position: 'bottom',
-              stacked: false,
-              gridLines: {
-                display: true
-              },
-              ticks: {
-                fontSize: 10,
-                maxTicksLimit: 20,
-                fontColor: '#808080'
-              }
-            }
-          ],
-          yAxes: [
-            {
-              stacked: false,
-              gridLines: {
-                display: true
-              },
-              ticks: {
-                fontSize: 12,
-                maxTicksLimit: 10,
-                fontColor: '#808080',
-                callback(value) {
-                  return value.toFixed(2) + '%'
-                }
-              }
-            }
-          ]
-        },
-        tooltips: {
-          displayColors: false,
-          callbacks: {
-            title(tooltipItems, _) {
-              const label = tooltipItems[0].label
-              return `期間: ${label}`
-            },
-            label(tooltipItem, data) {
-              const currentData = data.datasets[tooltipItem.datasetIndex]
-              const percentage = `${currentData.data[tooltipItem.index]}%`
+      newsItems: News.newsItems
+      // metroGraphOption: {
+      //   responsive: true,
+      //   legend: {
+      //     display: true
+      //   },
+      //   scales: {
+      //     xAxes: [
+      //       {
+      //         position: 'bottom',
+      //         stacked: false,
+      //         gridLines: {
+      //           display: true
+      //         },
+      //         ticks: {
+      //           fontSize: 10,
+      //           maxTicksLimit: 20,
+      //           fontColor: '#808080'
+      //         }
+      //       }
+      //     ],
+      //     yAxes: [
+      //       {
+      //         stacked: false,
+      //         gridLines: {
+      //           display: true
+      //         },
+      //         ticks: {
+      //           fontSize: 12,
+      //           maxTicksLimit: 10,
+      //           fontColor: '#808080',
+      //           callback(value) {
+      //             return value.toFixed(2) + '%'
+      //           }
+      //         }
+      //       }
+      //     ]
+      //   },
+      //   tooltips: {
+      //     displayColors: false,
+      //     callbacks: {
+      //       title(tooltipItems, _) {
+      //         const label = tooltipItems[0].label
+      //         return `期間: ${label}`
+      //       },
+      //       label(tooltipItem, data) {
+      //         const currentData = data.datasets[tooltipItem.datasetIndex]
+      //         const percentage = `${currentData.data[tooltipItem.index]}%`
 
-              return `${metroGraph.base_period}の利用者数との相対値: ${percentage}`
-            }
-          }
-        }
-      }
+      //         return `${metroGraph.base_period}の利用者数との相対値: ${percentage}`
+      //       }
+      //     }
+      //   }
+      // }
     }
     return data
   },
