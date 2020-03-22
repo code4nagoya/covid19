@@ -32,7 +32,7 @@
           :date="Data.patients.date"
           :unit="'人'"
           :url="
-            'https://www.pref.aichi.jp/soshiki/kenkotaisaku/novel-coronavirus.html'
+            'https://www.pref.aichi.jp/site/covid19-aichi/kansensya-kensa.html'
           "
         />
       </v-col>
@@ -46,7 +46,7 @@
           :date="Data.patients.date"
           :info="sumInfoOfPatients"
           :url="
-            'https://www.pref.aichi.jp/soshiki/kenkotaisaku/novel-coronavirus.html'
+            'https://www.pref.aichi.jp/site/covid19-aichi/kansensya-kensa.html'
           "
         />
       </v-col>

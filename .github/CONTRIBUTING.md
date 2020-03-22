@@ -2,7 +2,7 @@
 
 コントリビューターの皆様、本プロジェクトにご参加いただきありがとうございます！！
 
-開発責任者をしています、Code for Nagoyaの宮内です。何か質問があれば、Slack などでお気軽に質問してください！
+何か質問があれば、Slack 等でお気軽に質問してください！
 
 本サイトの開発に参加してくださる方に対して、参加方法をお伝えします。
 
@@ -27,7 +27,7 @@
 * 提案なども受け付けます！積極的に新しく Issue を作ってください。
 
 ## CONTRIBUTORS.md への追加について
-ご協力いただいた皆様のお名前（ハンドルネーム）や役割を記す、[CONTRIBUTORS.md](https://github.com/code4nagoya/covid19/blob/development/CONTRIBUTORS.md) というファイルがあります。
+ご協力いただいた皆様のお名前（ハンドルネーム）や役割を記す、[CONTRIBUTORS.md](https://github.com/code4nagoya/covid19/wiki/Contributors) というファイルがあります。
 何かしらの貢献を行った方は、ぜひこちらにもお名前をお載せください。
 Issue に、掲載名、リンク先（あれば）、役割をコメントください（準備中）。
 

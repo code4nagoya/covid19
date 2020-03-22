@@ -40,25 +40,11 @@
       <div class="SideNavigation-Footer">
         <div class="SideNavigation-SocialLinkContainer">
           <a
-            href="http://line.naver.jp/ti/p/%40aichipref"
-            target="_blank"
-            rel="noopener"
-          >
-            <img src="/line.png" alt="LINE" />
-          </a>
-          <a
-            href="https://twitter.com/pref_aichi"
+            href="https://twitter.com/stopcovid19ai"
             target="_blank"
             rel="noopener"
           >
             <img src="/twitter.png" alt="Twitter" />
-          </a>
-          <a
-            href="https://www.facebook.com/aichikoho"
-            target="_blank"
-            rel="noopener"
-          >
-            <img src="/facebook.png" alt="Facebook" />
           </a>
           <a
             href="https://github.com/code4nagoya/covid19"
@@ -139,7 +125,7 @@ export default {
           icon: 'mdi-account-multiple',
           title: this.$t('for Citizens'),
           link:
-            'https://www.pref.aichi.jp/soshiki/kenkotaisaku/novel-coronavirus.html'
+            'https://www.pref.aichi.jp/site/covid19-aichi/kansensya-kensa.html'
         },
         {
           icon: 'mdi-domain',
