@@ -27,7 +27,7 @@
         target="_blank"
         rel="noopener"
       >
-        愛知県内の発生状況について
+        出典: 愛知県新型コロナウイルス感染症対策サイト
         <v-icon class="ExternalLinkIcon" size="15">
           mdi-open-in-new
         </v-icon>

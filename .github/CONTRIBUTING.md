@@ -29,7 +29,7 @@
 ## CONTRIBUTORS.md への追加について
 ご協力いただいた皆様のお名前（ハンドルネーム）や役割を記す、[CONTRIBUTORS.md](https://github.com/code4nagoya/covid19/wiki/Contributors) というファイルがあります。
 何かしらの貢献を行った方は、ぜひこちらにもお名前をお載せください。
-Issue に、掲載名、リンク先（あれば）、役割をコメントください（準備中）。
+[Issue](https://github.com/code4nagoya/covid19/issues/130) に、掲載名、リンク先（あれば）、役割をコメントください。
 
 ## 開発に関する情報
 * 開発サイト https://dev-covid19-aichi.netlify.com/

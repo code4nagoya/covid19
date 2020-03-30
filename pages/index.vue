@@ -11,6 +11,11 @@
       :date="newsItem.date"
       :url="newsItem.url"
     />
+    <whats-new
+      class="mb-4"
+      text="当サイトは有志が作成したものです。お問い合わせは愛知県ではなく、当サイト運営まで。"
+      url="/about"
+    />
     <!-- <static-info
       class="mb-4"
       :url="'/flow'"
@@ -23,6 +28,9 @@
           title="検査陽性者の状況"
           :title-id="'details-of-confirmed-cases'"
           :date="headerItem.date"
+          :url="
+            'https://www.pref.aichi.jp/site/covid19-aichi/kansensya-kensa.html'
+          "
         >
           <confirmed-cases-table v-bind="confirmedCases" />
         </svg-card>

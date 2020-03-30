@@ -1,5 +1,11 @@
 <template>
-  <data-view class="SvgCard" :title="title" :title-id="titleId" :date="date">
+  <data-view
+    class="SvgCard"
+    :title="title"
+    :title-id="titleId"
+    :date="date"
+    :url="url"
+  >
     <template v-slot:button>
       <p class="Graph-Desc">
         （注）県内において疑い例または患者の濃厚接触者として検査を行ったものについて掲載<br />
@@ -40,6 +46,11 @@ export default {
     },
     date: {
       type: String,
+      default: ''
+    },
+    url: {
+      type: String,
+      required: false,
       default: ''
     }
   }
