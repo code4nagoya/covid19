@@ -178,8 +178,6 @@ export default {
     ConfirmedCasesTable
   },
   data() {
-    console.dir(Data)
-
     // 感染者数グラフ
     const patientsGraph = formatGraph(Data.patients_summary.data)
 
