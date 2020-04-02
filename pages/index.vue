@@ -38,6 +38,23 @@
 
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
+          title="検査実施件数"
+          :title-id="'number-of-inspections'"
+          :chart-id="'time-bar-chart-inspections'"
+          :chart-data="inspectionsGraph"
+          :date="DataInspections.inspections_summary.date"
+          :unit="'件'"
+          :remarks="
+            '※3/1は1/30からの合算値、3/8は3/2からの合算値、3/15は3/9からの合算値'
+          "
+          :url="
+            'https://www.pref.aichi.jp/site/covid19-aichi/kansensya-kensa.html'
+          "
+        />
+      </v-col>
+
+      <v-col cols="12" md="6" class="DataCard">
+        <time-bar-chart
           title="陽性患者数"
           :title-id="'number-of-confirmed-cases'"
           :chart-id="'time-bar-chart-patients'"
@@ -63,22 +80,35 @@
           "
         />
       </v-col>
+
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          title="検査実施件数"
-          :title-id="'number-of-inspections'"
-          :chart-id="'time-bar-chart-inspections'"
-          :chart-data="inspectionsGraph"
-          :date="DataInspections.inspections_summary.date"
-          :unit="'件'"
-          :remarks="
-            '※3/1は1/30からの合算値、3/8は3/2からの合算値、3/15は3/9からの合算値'
-          "
+          title="陽性患者数(名古屋市)"
+          :title-id="'number-of-confirmed-cases'"
+          :chart-id="'time-bar-chart-patients'"
+          :chart-data="patientsGraph"
+          :date="Data.patients_summary.date"
+          :unit="'人'"
           :url="
             'https://www.pref.aichi.jp/site/covid19-aichi/kansensya-kensa.html'
           "
         />
       </v-col>
+
+      <v-col cols="12" md="6" class="DataCard">
+        <data-table
+          :title="'陽性患者の属性(名古屋市)'"
+          :title-id="'attributes-of-confirmed-cases-nagoya'"
+          :chart-data="patientsTableNagoya"
+          :chart-option="{}"
+          :date="Data.patients.date"
+          :info="sumInfoOfPatientsNagoya"
+          :url="
+            'https://www.pref.aichi.jp/site/covid19-aichi/kansensya-kensa.html'
+          "
+        />
+      </v-col>
+
       <!--
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
@@ -148,10 +178,17 @@ export default {
     ConfirmedCasesTable
   },
   data() {
+    console.dir(Data)
+
     // 感染者数グラフ
     const patientsGraph = formatGraph(Data.patients_summary.data)
     // 感染者数
     const patientsTable = formatTable(Data.patients.data)
+    const patientsTableNagoya = formatTable(
+      Data.patients.data.filter(d => {
+        return d['備考'].match(/名古屋市発表/)
+      })
+    )
 
     const inspectionsGraph = formatGraph(
       DataInspections.inspections_summary.data
@@ -191,6 +228,12 @@ export default {
       unit: '人'
     }
 
+    const sumInfoOfPatientsNagoya = {
+      lText: patientsTableNagoya.datasets.length - 1,
+      sText: patientsGraph[patientsGraph.length - 1].label + 'の累計',
+      unit: '人'
+    }
+
     const sumInfoOfInspections = {
       lText: inspectionsGraph[
         inspectionsGraph.length - 1
@@ -203,6 +246,7 @@ export default {
       Data,
       DataInspections,
       patientsTable,
+      patientsTableNagoya,
       patientsGraph,
       inspectionsGraph,
       // dischargesGraph,
@@ -214,6 +258,7 @@ export default {
       // inspectionsLabels,
       confirmedCases,
       sumInfoOfPatients,
+      sumInfoOfPatientsNagoya,
       sumInfoOfInspections,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
