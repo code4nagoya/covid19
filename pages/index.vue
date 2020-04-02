@@ -86,7 +86,7 @@
           title="陽性患者数(名古屋市)"
           :title-id="'number-of-confirmed-cases'"
           :chart-id="'time-bar-chart-patients'"
-          :chart-data="patientsGraph"
+          :chart-data="patientsGraphNagoya"
           :date="Data.patients_summary.date"
           :unit="'人'"
           :url="
@@ -182,6 +182,9 @@ export default {
 
     // 感染者数グラフ
     const patientsGraph = formatGraph(Data.patients_summary.data)
+
+    const patientsGraphNagoya = formatGraph(Data.patients_nagoya_summary.data)
+
     // 感染者数
     const patientsTable = formatTable(Data.patients.data)
     const patientsTableNagoya = formatTable(
@@ -248,6 +251,7 @@ export default {
       patientsTable,
       patientsTableNagoya,
       patientsGraph,
+      patientsGraphNagoya,
       inspectionsGraph,
       // dischargesGraph,
       // contactsGraph,
