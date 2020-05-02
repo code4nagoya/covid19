@@ -98,6 +98,7 @@ function readPatients() : array
       $row['date'] = $carbon->format('Y-m-d');
       $row['w'] = $carbon->format('w');
       $row['short_date'] = $carbon->format('m/d');
+      $row['start_of_week'] = $carbon->startOfWeek()->format('Y-m-d');
       return $row;
     })
   ];
@@ -116,7 +117,7 @@ function createSummary(array $patients) {
         '日付' => $key,
         '小計' => $val
       ];
-    })->merge($patients['data']->groupBy('発表日')->map(function ($group, $key) {
+    })->merge($patients['data']->groupBy('start_of_week')->map(function ($group, $key) {
       return [
         '日付' => $key,
         '小計' => $group->count()
