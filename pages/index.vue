@@ -28,7 +28,7 @@
         />
       </v-col>
 
-      <!-- <v-col cols="12" md="6" class="DataCard">
+      <v-col cols="12" md="6" class="DataCard">
         <monitoring-view-2
           :parients-date="Data.patients_summary.date"
           :parients-data="Data.patients_summary.data"
@@ -37,7 +37,7 @@
           :main-summary-date="Data.main_summary_history.date"
           :main-summary-data="Data.main_summary_history.data"
         />
-      </v-col> -->
+      </v-col>
 
       <v-col cols="12" md="6" class="DataCard">
         <new-patients-chart
@@ -136,7 +136,7 @@ import MainSummaryChart from '@/components/MainSummaryChart.vue'
 import HospitalizedChart from '@/components/HospitalizedChart.vue'
 import CriticallyChart from '@/components/CriticallyChart.vue'
 import MonitoringView from '@/components/MonitoringView.vue'
-// import MonitoringView2 from '@/components/MonitoringView2.vue'
+import MonitoringView2 from '@/components/MonitoringView2.vue'
 import weeklizer from '@/utils/weeklizer'
 import normalizer from '@/utils/normalizer'
 
@@ -154,8 +154,8 @@ export default {
     CriticallyChart,
     InspectionCountChart,
     InspectionPersonsChart,
-    MonitoringView
-    // MonitoringView2
+    MonitoringView,
+    MonitoringView2
   },
   data() {
     // 日次データの補正
